@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mini Message Board</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<h1>Mini Message Board</h1>
+		<a href="/new">Add a message</a>
+		<p>Welcome to the Mini Message Board</p>
+		<h2>Messages:</h2>
+		<ul>
+			<% messages.forEach((message) => { %>
+			<li>
+				"<%= message.text %>" from <%= message.user %> on <%
+				message.date %>
+			</li>
+			<% }); %>
+		</ul>
+	</body>
+</html>
