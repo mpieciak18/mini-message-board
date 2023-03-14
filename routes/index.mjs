@@ -3,13 +3,13 @@ const router = e.Router();
 
 const messages = [
 	{
-		text: 'Hi there!',
-		user: 'Amando',
+		message: 'Hi there!',
+		name: 'Amando',
 		date: new Date(),
 	},
 	{
-		text: 'Hello World!',
-		user: 'Charles',
+		message: 'Hello World!',
+		name: 'Charles',
 		date: new Date(),
 	},
 ];
@@ -21,6 +21,15 @@ router.get('/', (req, res, next) => {
 
 router.get('/new', (req, res, next) => {
 	res.render('form');
+});
+
+router.post('/new', (req, res, next) => {
+	messages.unshift({
+		message: req.body.message,
+		name: req.body.name,
+		date: new Date(),
+	});
+	res.redirect('/');
 });
 
 export default router;
