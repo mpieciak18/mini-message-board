@@ -9,11 +9,14 @@
 		<a href="/new">Add a message</a>
 		<p>Welcome to the Mini Message Board</p>
 		<h2>Messages:</h2>
-		<ul>
+		<ul class="messages">
 			<% messages.forEach((message) => { %>
-			<li>
-				"<%= message.message %>" from <%= message.name %> on <%=
-				message.date %>
+			<li class="message">
+				<div class="header">
+					<div class="author"><%= message.name %></div>
+					<div class="date"><%= message.date.toLocaleString() %></div>
+				</div>
+				<div class="body"><%= message.message %></div>
 			</li>
 			<% }); %>
 		</ul>

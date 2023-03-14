@@ -17,3 +17,28 @@ form {
 	width: min-content;
 	padding: 10px;
 }
+
+.messages {
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+	padding: 0px;
+	max-width: 500px;
+	gap: 6px;
+}
+
+.message .header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 12px;
+	color: rgb(100, 100, 100);
+	font-style: italic;
+	margin-bottom: 12px;
+}
+
+.message {
+	border: rgb(80, 80, 80) 1px dotted;
+	border-radius: 12px;
+	padding: 12px;
+}
